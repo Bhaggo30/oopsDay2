@@ -1,21 +1,55 @@
+	
 package com.bridgelabz;
-
+import java.util.Scanner;
 public class MainClass {
-	public static void main(String[] args) {
-		
-		Employee e1 = new Employee(101,"tom","developer");
-		Employee e2 = new Employee(102, "jerry", "tester");
-		System.out.println("display the details of developer "+e1);
-		e1.developer();
-		System.out.println("display the details of tester"+e2);
-		e2.tester();
-	    Manager m1 = new Manager(101,"tom","tester",201);
-	    System.out.println("manager 1 details "+m1);
-	    Manager m2 = new Manager(102, "jerry", "tester", 202);
-	    System.out.println("manager 2 details "+m2);
-	    m1.managerwork();
-	    
-		
+	
+	    public static void main(String[] args) {
+	        Election election = new Election(); // Specify the max number of candidates
+	        Scanner sc = new Scanner(System.in);
+
+	        while (true) {
+	            System.out.println("\nElection System Menu:");
+	            System.out.println("1. Add Candidate");
+	            System.out.println("2. Cast Vote");
+	            System.out.println("3. Display Votes");
+	            System.out.println("4. Declare Winner");
+	            System.out.println("5. Exit");
+	            System.out.println("Enter your choice:");
+
+	            int choice = sc.nextInt();
+	            sc.nextLine();
+
+	            switch (choice) {
+	                case 1:
+	                    System.out.println("Enter candidate name:");
+	                    String candidateName = sc.nextLine();
+	                    election.addCandidate(candidateName);
+	                    break;
+	                case 2:
+	                    System.out.println("Candidate names:");
+	                    election.showAllCandidates();
+	                    System.out.println("Enter candidate name to vote for:");
+	                    String voteCandidateName = sc.nextLine();
+	                    election.castVote(voteCandidateName);
+	                    break;
+	                case 3:
+	                    election.displayVotes();
+	                    break;
+	                case 4:
+	                    election.declareWinner();
+	                    break;
+	                case 5:
+	                    System.out.println("Exiting the Election System");
+	                    sc.close();
+	                    System.exit(0);
+	                    break;
+	                default:
+	                    System.out.println("Invalid choice, please try again.");
+	                    break;
+	            }
+	        }
+	    }
 	}
 
-}
+
+
