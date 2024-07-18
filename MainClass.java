@@ -1,55 +1,35 @@
-	
-package com.bridgelabz;
-import java.util.Scanner;
-public class MainClass {
-	
-	    public static void main(String[] args) {
-	        Election election = new Election(); // Specify the max number of candidates
-	        Scanner sc = new Scanner(System.in);
+ class Name {
 
-	        while (true) {
-	            System.out.println("\nElection System Menu:");
-	            System.out.println("1. Add Candidate");
-	            System.out.println("2. Cast Vote");
-	            System.out.println("3. Display Votes");
-	            System.out.println("4. Declare Winner");
-	            System.out.println("5. Exit");
-	            System.out.println("Enter your choice:");
+    String name;
 
-	            int choice = sc.nextInt();
-	            sc.nextLine();
+    public String getName(String name){
+        this.name = name;
+        return name;
+    }
+}
+class Age{
+    int age;
+    public int getAge(int age ){
+        this.age = age;
+        return age;
+    }
+}
+class MobileNumber{
+    long mNumber;
+    public long getmNumber(long mNumber){
+        this.mNumber = mNumber;
+        return mNumber;
+    }
+}
+public class MainClass{
+    public static void main(String[] args) {
+        Name name = new Name();
+        System.out.println("name of the student "+name.getName("bhagyashree"));
+        Age age = new Age();
+        System.out.println("age of the student "+age.getAge(24));
+        MobileNumber mobileNumber = new MobileNumber();
+        System.out.println("mobile number of the student "+mobileNumber.getmNumber(7772944239l));
 
-	            switch (choice) {
-	                case 1:
-	                    System.out.println("Enter candidate name:");
-	                    String candidateName = sc.nextLine();
-	                    election.addCandidate(candidateName);
-	                    break;
-	                case 2:
-	                    System.out.println("Candidate names:");
-	                    election.showAllCandidates();
-	                    System.out.println("Enter candidate name to vote for:");
-	                    String voteCandidateName = sc.nextLine();
-	                    election.castVote(voteCandidateName);
-	                    break;
-	                case 3:
-	                    election.displayVotes();
-	                    break;
-	                case 4:
-	                    election.declareWinner();
-	                    break;
-	                case 5:
-	                    System.out.println("Exiting the Election System");
-	                    sc.close();
-	                    System.exit(0);
-	                    break;
-	                default:
-	                    System.out.println("Invalid choice, please try again.");
-	                    break;
-	            }
-	        }
-	    }
-	}
+    }
 
-
-
+}
