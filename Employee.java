@@ -1,36 +1,29 @@
 package com.bridgelabz;
 
 public class Employee {
-	private String EName;
-	private String Erole;
-	private double salary;
-	public Employee(String eName, String erole, double salary) {
+	int eId;
+	String eName;
+	String eRole;
+	public Employee(int eId, String eName, String eRole) {
 		super();
-		EName = eName;
-		Erole = erole;
-		this.salary = salary;
+		this.eId = eId;
+		this.eName = eName;
+		this.eRole = eRole;
 	}
-	public String getEName() {
-		return EName;
+	public void work() {
+		System.out.println("employee is working");
 	}
-	public void setEName(String eName) {
-		EName = eName;
+	public void tester() {
+		System.out.println("tester team test the application");
 	}
-	public String getErole() {
-		return Erole;
-	}
-	public void setErole(String erole) {
-		Erole = erole;
-	}
-	public double getSalary() {
-		return salary;
-	}
-	public double setSalary(double salary) {
-		return this.salary = salary;
+	public void developer() {
+		System.out.println("developer team develop the application");
 	}
 	@Override
 	public String toString() {
-		return "Employee [EName=" + EName + ", Erole=" + Erole + ", salary=" + salary + "]";
+		return "Employee [eId=" + eId + ", eName=" + eName + ", eRole=" + eRole + "]";
 	}
-	    
+	
+	
+
 }
